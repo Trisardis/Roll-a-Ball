@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
         // Set count to 0
         count = 0;
 
-        // SetCountText ();
+        SetCountText ();
 
         // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
         winTextObject.SetActive(false);
@@ -44,21 +44,19 @@ public class PlayerController : MonoBehaviour
 			// Add one to the score variable 'count'
 			count = count + 1;
 
-			// // Run the 'SetCountText()' function (see below)
-			// SetCountText ();
-
-            Debug.Log(count);
+			// Run the 'SetCountText()' function (see below)
+			SetCountText ();
 		}
 	}
 
-    // void SetCountText()
-	// {
-	// 	countText.text = "Count: " + count.ToString();
+    void SetCountText()
+	{
+		countText.text = "Count: " + count.ToString();
 
-	// 	if (count >= 4) 
-	// 	{
-    //         // Set the text value of your 'winText'
-    //         winTextObject.SetActive(true);
-	// 	}
-	// }
+		if (count >= 4) 
+		{
+            // Set the text value of your 'winText'
+            winTextObject.SetActive(true);
+		}
+	}
 }
