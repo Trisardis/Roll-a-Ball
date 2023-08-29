@@ -11,13 +11,15 @@ public class CameraController : MonoBehaviour
 	// Start is called before the first frame update.
 	void Start()
 	{
-		Player = GameObject.Find("Player");
-		Offset = transform.position - Player.transform.position;
+		// GameObject.Find() is very expensive so never have this function in Update()
+		// Only put it in Start()
+		// Player = GameObject.Find("Player");
+		Offset = this.transform.position - Player.transform.position;
 	}
 
 	// LateUpdate is called after Update but before rendering the frame.
 	void LateUpdate()
 	{
-		transform.position = Player.transform.position + Offset;
+		this.transform.position = Player.transform.position + Offset;
 	}
 }
